@@ -1,3 +1,11 @@
+require './lib/gist'
+require './lib/gistfile'
+require 'faraday'
+require 'json'
+require 'base64'
+
+
+
 def welcome
   puts "Welcome to the Github command-line client."
   login
@@ -60,6 +68,22 @@ def create
   files = {filename => {:content => content}}
 
   Gist.create(:public => public_attribute, :description => description, :files => files)
+end
+
+# def list
+#   Gist.list
+# end
+
+def delete
+  puts "What is the id of the gist you want to delete?"
+  id = gets.chomp
+  Gist.delete(id)
+  puts "Gist #{id} has been deleted."
+end
+
+def edit
+
+
 end
 
 welcome
