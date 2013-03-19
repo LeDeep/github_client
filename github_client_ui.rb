@@ -82,8 +82,22 @@ def delete
 end
 
 def edit
-
-
+  choice = nil
+  puts "What is the id of the gist you would like to edit?"
+  id = gets.chomp
+  puts "What would you like to edit? Press 1 to edit filename or 2 to edit description"
+  case choice = gets.chomp
+  when '1'
+    puts "Please enter the new file name you would like for your gist:"
+    file_name = gets.chomp
+    Gist.edit_filename(id, file_name)
+  when '2'
+    puts "Please enter the new description you would like for your gist:"
+    description = gets.chomp
+    Gist.edit_description(id, description)
+  else
+    menu
+  end
 end
 
 welcome

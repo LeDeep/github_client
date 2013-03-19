@@ -5,3 +5,6 @@ require 'base64'
 require 'webmock/rspec'
 require 'gist'
 require 'gistfile'
+
+# $github_username = 'pjlowry'
+# $github_password = 'spring00'
